@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import Button from "../../components/Button/Button";
-import MainListItem from "../../components/Main/MainListItem";
+import ListItem from "../../components/ListItem/ListItem";
 import PostModal from "../../components/Main/PostModal";
 import { WikiListContext } from "../../context/WikiListContext";
 
@@ -32,7 +32,7 @@ export default function Main() {
       <h2>위키 목록</h2>
       <ul>
         {wikiList.slice(pageIndex, pageIndex + 5).map((item) => {
-          return <MainListItem key={item.id} id={item.id} title={item.title} />
+          return <ListItem key={item.id} id={item.id} title={item.title} />
         })}
       </ul>
       {isModalOn && <PostModal closeModal={closeModal} />}
