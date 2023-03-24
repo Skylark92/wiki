@@ -1,5 +1,14 @@
-export default function Button({ onClick, text }) {
+import "./Button.css";
+
+export default function Button({ className, onClick, text, hidden }) {
   return (
-    <button type="button" onClick={onClick}>{text}</button>
+    <button
+      className={className}
+      type="button"
+      onClick={onClick}
+      style={{ visibility: hidden ? "hidden" : "visible" }}
+    >
+      {text}
+    </button>
   )
 }
