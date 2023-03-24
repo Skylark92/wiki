@@ -5,6 +5,7 @@ import WikiEdit from "../../components/Wiki/WikiEdit";
 import WikiRelated from "../../components/Wiki/WikiRelated";
 import WikiTitle from "../../components/Wiki/WikiTitle";
 import { WikiListContext } from "../../context/WikiListContext";
+import "./Wiki.css";
 
 export default function Wiki() {
   const { wikiList } = useContext(WikiListContext);
@@ -28,7 +29,7 @@ export default function Wiki() {
   }, [wikiList, id])
 
   return (
-    <div className="wiki-container">
+    <section className="wiki-wrapper">
       {isEditing ? <WikiEdit
         data={data}
         closeEditing={closeEditing}
@@ -39,6 +40,6 @@ export default function Wiki() {
           <WikiRelated data={data} />
         </>
       )}
-    </div>
+    </section>
   )
 }

@@ -38,22 +38,25 @@ export default function PostModal({ closeModal }) {
   return (
     <div className="post-modal-background">
       <div className="post-modal-wrapper">
-        <label htmlFor="post-title">제목 : </label>
-        <input
-          id="post-title"
-          type="text"
-          value={postTitle}
-          onChange={postTitleHandler}
-        />
+        <label htmlFor="post-title">제목 :
+          <input
+            id="post-title"
+            type="text"
+            value={postTitle}
+            onChange={postTitleHandler}
+          />
+        </label>
         <label htmlFor="post-content">내용 : </label>
-        <input
+        <textarea
           id="post-content"
-          type="textarea"
+          type="text"
           value={postContent}
           onChange={postContentHandler}
         />
-        <Button onClick={closeModal} text="취소" />
-        <Button onClick={savePostHandler} text="저장" />
+        <div className="post-modal-button-wrapper">
+          <Button onClick={closeModal} text="취소" />
+          <Button onClick={savePostHandler} text="저장" />
+        </div>
       </div>
     </div>
   )

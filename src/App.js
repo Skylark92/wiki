@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { WikiListContext } from "./context/WikiListContext";
 import Router from "./router/Router";
+import "./App.css";
 
 function App() {
   const [wikiList, setWikiList] = useState([]);

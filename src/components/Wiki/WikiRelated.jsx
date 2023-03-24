@@ -13,10 +13,10 @@ export default function WikiRelated({ data }) {
   }, [data])
 
   return (
-    <footer>
+    <footer className="wiki-related-wrapper">
       <h3>연관 페이지 : </h3>
       <ul>
-        {related.map(item => <ListItem key={item.id} id={item.id} title={item.title} />)}
+        {related.map(item => <ListItem className="wiki-related-list-item" key={item.id} id={item.id} title={item.title} />)}
       </ul>
     </footer>
   )

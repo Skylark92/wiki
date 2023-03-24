@@ -1,0 +1,68 @@
+.wiki-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wiki-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--color-main);
+}
+
+.wiki-title {
+  width: 75%;
+  font-size: 1.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wiki-content {
+  height: 100%;
+  margin: 0.8rem 0;
+  line-height: 1.6rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.wiki-content > a {
+  color: dodgerblue;
+  text-decoration: underline;
+}
+
+.wiki-related-wrapper {
+  display: flex;
+}
+
+.wiki-related-wrapper > h3 {
+  white-space: nowrap;
+}
+.wiki-related-wrapper > ul {
+  display: block;
+  gap: 0.5rem;
+}
+
+.wiki-related-list-item {
+  display: inline-block;
+  
+  padding-left: 0.4rem;
+}
+
+.wiki-related-list-item > a {
+  display: inline-block;
+  font-size: 0.8rem;
+  max-width: 6rem;
+
+  padding: 0.4rem;
+  border: 1px solid black;
+  border-radius: 10px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

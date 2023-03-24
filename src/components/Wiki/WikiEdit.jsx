@@ -2,8 +2,9 @@ import axios from "axios";
 import { useContext, useState } from "react"
 import { WikiListContext } from "../../context/WikiListContext";
 import Button from "../Button/Button";
+import "./WikiEdit.css";
 
-export default function WikiEdit({ data, closeEditing }) {
+export default function WikiEdit({ data, closeEditing, inputRef }) {
   const { wikiList, setWikiList } = useContext(WikiListContext);
   const [editTitle, setEditTitle] = useState(data?.title);
   const [editContent, setEditContent] = useState(data?.content);
@@ -40,10 +41,14 @@ export default function WikiEdit({ data, closeEditing }) {
 
   return (
     <form className="wiki-edit-form">
-      <input type="text" value={editTitle} onChange={editTitleHandler} />
-      <input type="textarea" value={editContent} onChange={editContentHandler} />
-      <Button onClick={closeEditing} text="취소" />
-      <Button onClick={saveEditHandler} text="저장" />
+      <div className="wiki-edit-text-wrapper">
+        <input className="wiki-edit-title" type="text" value={editTitle} onChange={editTitleHandler} ref={inputRef} />
+        <div className="wiki-edit-button-wrapper">
+          <Button onClick={closeEditing} text="취소" />
+          <Button onClick={saveEditHandler} text="저장" />
+        </div>
+      </div>
+      <textarea className="wiki-edit-content" value={editContent} onChange={editContentHandler} />
     </form>
   )
 }
